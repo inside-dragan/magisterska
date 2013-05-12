@@ -5,15 +5,12 @@ Created on Jun 10, 2012
 '''
 import os
 import time
-
-from mk.dragan.config.Params import Params
-from mk.dragan.data.creators.ListMovingAveragesDataCreator import \
-    ListMovingAveragesDataCreator
-from mk.dragan.data.postprocessors.CatsBalanser import CatsBalanser
-from mk.dragan.data.preprocessors.LnDiffPreprocessor import LnDiffPreprocessor
-from mk.dragan.executors.TrainTestTwoLevelsExecutor import \
-    TrainTestTwoLevelsExecutor
-from mk.dragan.resultgenerators.TwoLevelsGenerator import TwoLevelsGenerator
+from mk.com.dragan.data.creators.ListMovingAveragesDataCreator import ListMovingAveragesDataCreator
+from mk.com.dragan.data.postprocessors.CatsBalanser import CatsBalanser
+from mk.com.dragan.data.preprocessors.LnDiffPreprocessor import LnDiffPreprocessor
+from mk.com.dragan.nupic.config.Params import Params
+from mk.com.dragan.nupic.executors.TrainTestTwoLevelsExecutor import TrainTestTwoLevelsExecutor
+from mk.com.dragan.nupic.result_generators.TwoLevelsGenerator import TwoLevelsGenerator
 
 
 def addToFile(text):

@@ -13,8 +13,3 @@ class SimplePreprocessor(AbstractPreprocessor):
     
     def getData(self):
         return self._trim(self._getData())
-        
-    def getDescription(self):
-        result = super(AbstractPreprocessor, self).getDescription()
-        result['transformed'] = 'normal'
-        return result

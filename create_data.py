@@ -10,6 +10,7 @@ import shutil
 from mk.com.dragan.data.creators.LastValuesDataCreator import LastValuesDataCreator
 from mk.com.dragan.data.postprocessors.SimpleCatBalanser import SimpleCatsBalanser
 from mk.com.dragan.data.preprocessors.LnDiffPreprocessor import LnDiffPreprocessor
+from mk.com.dragan.data.readers.ForexRateNewFormatReader import ForexRateNewFormatReader
 from mk.com.dragan.utils.CsvUtils import writeData
 
 
@@ -22,7 +23,7 @@ os.mkdir(outPath)
 #n = LastValuesDataCreator(LnDiffPreprocessor(f, directionCats=True), 
 #    [[5,4,3,2,1,0]], normalize=True)
 
-currencies = ['AUD-USD', 'EUR-USD', 'GBP-CHF', 'GBP-EUR', 'GBP-USD', 'EUR-CHF']
+currencies = ['AUD-USD', 'EUR-USD', 'GBP-CHF', 'EUR-GBP', 'GBP-USD', 'EUR-CHF', 'EUR-AUD']
 
 
 def merge_with(d1, d2):
@@ -36,7 +37,8 @@ def merge_with(d1, d2):
 
 dateCatDict = {}
 for c in currencies:
-    n = LastValuesDataCreator(LnDiffPreprocessor(c, 'dnevna', directionCats=True),
+    dataReader = ForexRateNewFormatReader(c, 'saat')
+    n = LastValuesDataCreator(LnDiffPreprocessor(dataReader, directionCats=True),
                                            [(5, 4, 3, 2, 1, 0)], normalize=True)
     dateCatDict = merge_with(dateCatDict, n.getCatWithDatesDict())
 
@@ -52,7 +54,7 @@ def createWithLetterCategory(row):
     else: raise
     return result
 for v in dateCatDict.values():
-    if len(v) == 6:
+    if len(v) == len(currencies):
        resultList.append(createWithLetterCategory(v))
 
 balanser = SimpleCatsBalanser()

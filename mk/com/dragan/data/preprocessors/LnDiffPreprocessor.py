@@ -15,8 +15,3 @@ class LnDiffPreprocessor(AbstractPreprocessor):
     def getData(self):
         data = getLnDifferences(self._getData(), 1)
         return self._trim(data)
-    
-    def getDescription(self):
-        result = AbstractPreprocessor.getDescription(self)
-        result['transformed'] = 'lnDiff'
-        return result

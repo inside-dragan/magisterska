@@ -9,23 +9,19 @@ from mk.com.dragan.utils.DataUtils import getShifted, getDifferencesOfLists, get
 
 class AbstractPreprocessor(object):
     
-    __d = None
+    __dataReader = None
     __directionCats = None
-    __currency = None
-    __interval = None
-    
-    def __init__(self, currency, interval, directionCats):
+
+    def __init__(self, dataReader, directionCats):
         self.__directionCats = directionCats
-        self.__currency = currency
-        self.__interval = interval
-        self.__d = ForexrateDataReader(currency, interval)
-        
+        self.__dataReader = dataReader
+
     def _trim(self, lista):
         pass
-    
+
     def _getData(self):
-        return self.__d.getData()
-    
+        return self.__dataReader.data
+
     def getCats(self):
         data = self._getData()
         dataNext = getShifted(data, -1)
@@ -38,15 +34,4 @@ class AbstractPreprocessor(object):
         return self._trim(cats)  
       
     def getDates(self):
-        return self._trim(self.__d.getDates())    
-    
-    def getDescription(self):
-        result = {}
-        if self.__directionCats:
-            result['direction'] = 'directed'
-        else:
-            result['direction'] = 'notDirected'
-#        result['currency'] = self.__currency #not needed for now
-        result['interval'] = self.__interval
-        return result
-          
+        return self._trim(self.__dataReader.dates)
