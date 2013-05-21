@@ -34,6 +34,15 @@ def merge_with(d1, d2):
             res[key] = [val]
     return res
 
+def createWithLetterCategory(row):
+    result = row[:]
+    if result[-1] == 0:
+        result[-1] = 'A'
+    elif result[-1] == 1:
+        result[-1] = 'B'
+    else: raise
+    return result
+
 dateCatDict = {}
 for c in currencies:
     dataReader = ForexRateNewFormatReader(c, 'saat')
@@ -43,20 +52,15 @@ for c in currencies:
 
 
 resultList = []
+cats = []
 
-def createWithLetterCategory(row):
-    result = row[:]
-    if result[-1] == 0:
-        result[-1] = 'A'
-    elif result[-1] == 1:
-        result[-1] = 'B'
-    else: raise
-    return result
 for v in dateCatDict.values():
     if len(v) == len(currencies):
-        resultList.append(createWithLetterCategory(v))
+        resultList.append(v[0:-1])
+        cats.append(v[-1:])
 
-balanser = SimpleCatsBalanser()
-resultList = balanser.getBalansed(resultList)
-resultList.insert(0, currencies)
-writeData(resultList, outPath + '/input.csv', delimiter=',')
+balancer = SimpleCatsBalanser()
+resultList = balancer.getBalansed(resultList)
+# resultList.insert(0, currencies)
+writeData(cats, outPath + '/cat.csv', delimiter=',')
+writeData(resultList, outPath + '/input1.csv', delimiter=',')

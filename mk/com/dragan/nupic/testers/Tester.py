@@ -3,11 +3,11 @@ Created on Aug 18, 2011
 
 @author: dzaharie
 '''
+import logging
 from nupic.bindings.network import CreateRuntimeNetwork
 import os
-from mk.dragan.utils.loggingDef import logging
-from mk.dragan.utils.StringUtils import after, before
-from mk.dragan.utils.CsvUtils import getNumLines
+from mk.com.dragan.utils.CsvUtils import getNumLines
+from mk.com.dragan.utils.StringUtils import after, before
 
 
 log = logging.getLogger('Tester')

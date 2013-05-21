@@ -62,7 +62,7 @@ for v in dateCatDict.values():
 balanser = SimpleCatsBalanser()
 resultList = balanser.getBalansed(resultList)
 resultList.insert(0, currencies)
-writeData(resultList, outPath + '/input.csv', delimiter=',')
+writeData(resultList, outPath + '/input1.csv', delimiter=',')
 
 # inputMatrix = []
 # length = min([len(element) for element in inputList])
@@ -75,7 +75,7 @@ writeData(resultList, outPath + '/input.csv', delimiter=',')
 
 
 
-# writeData(inputMatrix, outPath + '/input.csv', delimiter=',')
+# writeData(inputMatrix, outPath + '/input1.csv', delimiter=',')
 
 
 

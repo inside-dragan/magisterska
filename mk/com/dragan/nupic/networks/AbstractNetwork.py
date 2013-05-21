@@ -5,7 +5,8 @@ Created on Aug 20, 2011
 '''
 from nupic.bindings.network import CreateRuntimeNetwork
 from nupic.network.createnode import CreateNode
-from mk.dragan.config.Params import Params
+from mk.com.dragan.nupic.config.Params import Params
+
 
 class AbstractNetwork(object):
     

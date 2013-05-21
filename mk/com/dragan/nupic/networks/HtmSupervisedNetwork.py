@@ -3,12 +3,13 @@ Created on Aug 30, 2011
 
 @author: dzaharie
 '''
-from mk.dragan.networks.AbstractNetwork import AbstractNetwork
-from mk.dragan.networks.BasicDataInterface import BasicDataInterface
+import logging
 from nupic.network.simplehtm import SimpleHTM
-from mk.dragan.utils.loggingDef import logging
-from mk.dragan.config.Params import Params
-log = logging.getLogger('HtmSupervisedNetwork')    
+from mk.com.dragan.nupic.config.Params import Params
+from mk.com.dragan.nupic.networks.AbstractNetwork import AbstractNetwork
+from mk.com.dragan.nupic.networks.BasicDataInterface import BasicDataInterface
+
+log = logging.getLogger('HtmSupervisedNetwork')
 
 
 

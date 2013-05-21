@@ -4,7 +4,7 @@ from mk.com.dragan.utils.DataUtils import getColumn, convertToNumbers
 
 class ForexRateNewFormatReader(object):
     def __init__(self, currency, interval):
-        fileName = '/Users/draganzahariev/Dropbox/Magisterska/data/forexrate.co.uk/' + interval + '2/' + currency + '.csv'
+        fileName = 'C:/Users/Dragan/Dropbox/Magisterska/data/forexrate.co.uk/' + interval + '2/' + currency + '.csv'
         data = readStringData(fileName, delimiter=',')
         self.data = getColumn(data, 1)
         self.data = self.data[1:]

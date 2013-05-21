@@ -3,13 +3,14 @@ Created on Nov 24, 2011
 
 @author: Dragan
 '''
-from mk.dragan.analyze.Analyzer import Analyzer
-from mk.dragan.analyze.Report import Report
-from mk.dragan.networks.HtmSupervisedNetwork import HtmSupervisedNetwork
-from mk.dragan.runners.AbstractRunner import AbstractRunner
-from mk.dragan.tester.Tester import Tester
-from mk.dragan.utils.CsvUtils import stripFile
 from nupic.analysis.visualizer.Visualizer import Visualizer
+from mk.com.dragan.nupic.analyze.Analyzer import Analyzer
+from mk.com.dragan.nupic.analyze.Report import Report
+from mk.com.dragan.nupic.networks.HtmSupervisedNetwork import HtmSupervisedNetwork
+from mk.com.dragan.nupic.runners.AbstractRunner import AbstractRunner
+from mk.com.dragan.nupic.testers.Tester import Tester
+from mk.com.dragan.utils.CsvUtils import stripFile
+
 
 class HtmSupervisedRunner(AbstractRunner):
     

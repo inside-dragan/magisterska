@@ -3,9 +3,9 @@ Created on Dec 11, 2011
 
 @author: dzaharie
 '''
-from mk.dragan.utils.loggingDef import logging
-from mk.dragan.executors.AbstractExecutor import AbstractExecutor
-from mk.dragan.runners.SupervisedTwoLevelsRunner import SupervisedTwoLevelsRunner
+import logging
+from mk.com.dragan.nupic.executors.AbstractExecutor import AbstractExecutor
+from mk.com.dragan.nupic.runners.SupervisedTwoLevelsRunner import SupervisedTwoLevelsRunner
 
 log = logging.getLogger('TrainTest Two Levels Executor')
 

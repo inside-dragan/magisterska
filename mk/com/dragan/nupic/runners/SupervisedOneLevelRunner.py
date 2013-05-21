@@ -3,14 +3,15 @@ Created on Dec 11, 2011
 
 @author: dzaharie
 '''
-from mk.dragan.analyze.Analyzer import Analyzer
-from mk.dragan.analyze.Report import Report
-from mk.dragan.runners.AbstractRunner import AbstractRunner
-from mk.dragan.utils.CsvUtils import stripFile
 from nupic.analysis.visualizer.Visualizer import Visualizer
-from mk.dragan.config.ExecConfig import VISUALIZE
-from mk.dragan.tester.TesterOneLevel import TesterOneLevel
-from mk.dragan.networks.SupervisedOneLevelNetwork import SupervisedOneLevelNetwork
+from mk.com.dragan.nupic.analyze.Analyzer import Analyzer
+from mk.com.dragan.nupic.analyze.Report import Report
+from mk.com.dragan.nupic.config.ExecConfig import VISUALIZE
+from mk.com.dragan.nupic.networks.SupervisedOneLevelNetwork import SupervisedOneLevelNetwork
+from mk.com.dragan.nupic.runners.AbstractRunner import AbstractRunner
+from mk.com.dragan.nupic.testers.TesterOneLevel import TesterOneLevel
+from mk.com.dragan.utils.CsvUtils import stripFile
+
 
 class SupervisedOneLevelRunner(AbstractRunner):
     

@@ -3,13 +3,13 @@ Created on Nov 25, 2011
 
 @author: dzaharie
 '''
-from mk.dragan.executors.AbstractExecutor import AbstractExecutor
-from mk.dragan.runners.BasicSupervisedRunner import BasicSupervisedRunner
-from mk.dragan.runners.BasicUnsupervisedRunner import BasicUnsupervisedRunner
-from mk.dragan.runners.HtmSupervisedRunner import HtmSupervisedRunner
-from mk.dragan.runners.SupervisedRunner import SupervisedRunner
-from mk.dragan.runners.UnsupervisedRunner import UnsupervisedRunner
-from mk.dragan.utils.loggingDef import logging
+import logging
+from mk.com.dragan.nupic.executors.AbstractExecutor import AbstractExecutor
+from mk.com.dragan.nupic.runners.BasicSupervisedRunner import BasicSupervisedRunner
+from mk.com.dragan.nupic.runners.BasicUnsupervisedRunner import BasicUnsupervisedRunner
+from mk.com.dragan.nupic.runners.HtmSupervisedRunner import HtmSupervisedRunner
+from mk.com.dragan.nupic.runners.SupervisedRunner import SupervisedRunner
+from mk.com.dragan.nupic.runners.UnsupervisedRunner import UnsupervisedRunner
 
 log = logging.getLogger('TrainTestExecutor')
 

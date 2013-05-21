@@ -3,8 +3,8 @@ Created on Oct 20, 2011
 
 @author: dzaharie
 '''
-from mk.dragan.utils.CsvUtils import readFloatData, writeData, readStringData
-from mk.dragan.utils.DataUtils import addZeros, getFirstColumn, extend
+from mk.com.dragan.utils.CsvUtils import readFloatData, writeData, readStringData
+from mk.com.dragan.utils.DataUtils import addZeros, getFirstColumn, extend
 
 
 def createWithZerosFile(inputFile, resultFile, groupSize, delimiter=','):   

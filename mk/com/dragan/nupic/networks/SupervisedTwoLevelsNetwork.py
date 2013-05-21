@@ -3,11 +3,10 @@ Created on Dec 11, 2011
 
 @author: dzaharie
 '''
-from mk.dragan.networks.AbstractNetwork import AbstractNetwork
+import logging
 from nupic.bindings.network import Network, Zeta1Train
-from mk.dragan.utils.CsvUtils import getNumLines
-
-from mk.dragan.utils.loggingDef import logging
+from mk.com.dragan.nupic.networks.AbstractNetwork import AbstractNetwork
+from mk.com.dragan.utils.CsvUtils import getNumLines
 
 log = logging.getLogger('Supervised Two Levels Network')
 

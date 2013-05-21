@@ -3,11 +3,10 @@ Created on Jul 26, 2011
 
 @author: dzaharie
 '''
-from mk.dragan.utils.CsvUtils import readFloatData, readIntData, readStringData, \
-    isNullArray
-from mk.dragan.utils.loggingDef import logging
-from mk.dragan.config.ResultContainer import ResultContainer
-from mk.dragan.config.Params import Params
+import logging
+from mk.com.dragan.nupic.config.Params import Params
+from mk.com.dragan.nupic.config.ResultContainer import ResultContainer
+from mk.com.dragan.utils.CsvUtils import readFloatData, readStringData, readIntData, isNullArray
 
 log = logging.getLogger('Analyzer')
 

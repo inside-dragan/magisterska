@@ -3,9 +3,9 @@ Created on Nov 20, 2011
 
 @author: Dragan
 '''
+import logging
 import os
-from mk.dragan.utils.loggingDef import logging
-from mk.dragan.utils.CsvTransformUtils import split60to20to20
+from mk.com.dragan.utils.CsvTransformUtils import split60to20to20
 
 log = logging.getLogger('AbstractExecutor')
 
@@ -36,5 +36,5 @@ class AbstractExecutor(object):
         for main, train, test, val, evaluate in zip(mainFiles, trainFiles, testFiles, validateFiles, evaluateFiles):
             if not os.path.exists(train) or not os.path.exists(test) or not os.path.exists(val):
                 log.info('separating ' + main + ' to ' + train + ', ' + test + ', ' + val + ' and' + evaluate)
-                split60to20to20(main, train, val, test, evaluate)          
+                split60to20to20(main, train, val, test, evaluate)
         

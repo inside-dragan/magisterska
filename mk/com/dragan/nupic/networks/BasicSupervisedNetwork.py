@@ -7,15 +7,15 @@ I maxGroupSize ne sum siguren dali moze da se definira
 
 @author: dzaharie
 '''
-from mk.dragan.networks.AbstractNetwork import AbstractNetwork
-from mk.dragan.config.Params import Params
+import logging
 from nupic.bindings.network import Network
 from nupic.network.helpers import AddZeta1Level, AddClassifierNode, \
     TrainBasicNetwork, AddSensor
-from mk.dragan.utils.loggingDef import logging
+from mk.com.dragan.nupic.config.Params import Params
+from mk.com.dragan.nupic.networks.AbstractNetwork import AbstractNetwork
 
 
-log = logging.getLogger('BasicSupervisedNetwork')    
+log = logging.getLogger('BasicSupervisedNetwork')
 
 class BasicSupervisedNetwork(AbstractNetwork):
     

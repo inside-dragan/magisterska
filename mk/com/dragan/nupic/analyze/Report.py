@@ -3,11 +3,12 @@ Created on Aug 20, 2011
 
 @author: dzaharie
 '''
+import logging
 from nupic.bindings.network import CreateRuntimeNetwork, RuntimeRegion
 from nupic.analysis import responses
-from mk.dragan.utils.loggingDef import logging
-from mk.dragan.config.ExecConfig import GENERATE_REPORTS
-from mk.dragan.config.ResultContainer import ResultContainer
+from mk.com.dragan.nupic.config.ExecConfig import GENERATE_REPORTS
+from mk.com.dragan.nupic.config.ResultContainer import ResultContainer
+
 
 log = logging.getLogger('Report')
 

@@ -3,9 +3,9 @@ Created on Dec 11, 2011
 
 @author: dzaharie
 '''
-from mk.dragan.utils.CsvUtils import getNumLines
-from mk.dragan.utils.loggingDef import logging
+import logging
 from nupic.bindings.network import CreateRuntimeNetwork
+from mk.com.dragan.utils.CsvUtils import getNumLines
 
 
 log = logging.getLogger('Tester One Level')
