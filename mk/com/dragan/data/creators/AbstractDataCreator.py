@@ -72,19 +72,6 @@ class AbstractDataCreator(object):
         for i, j in zip(self.__dates, self.__cat):
            result[i] = j
         return result
-
-    def getDataWithLetterCategories(self):
-        result = []
-        data = self.getData();
-        for line in data:
-            resultline = line[:].tolist()
-            if line[-1] == 0:
-                resultline[-1] = 'A'
-            elif line[-1] == 1:
-                resultline[-1] = 'B'
-            else: raise ValueError('category must be 0 or 1')
-            result.append(resultline)
-        return result 
     
     def getDescription(self):
         result = self.__preprocessor.getDescription()   

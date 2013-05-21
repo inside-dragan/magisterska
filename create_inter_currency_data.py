@@ -20,9 +20,6 @@ if os.path.exists(outPath):
     shutil.rmtree(outPath)
 os.mkdir(outPath)
 
-#n = LastValuesDataCreator(LnDiffPreprocessor(f, directionCats=True), 
-#    [[5,4,3,2,1,0]], normalize=True)
-
 currencies = ['AUD-CAD', 'AUD-CHF', 'AUD-JPY', 'AUD-USD', 'CAD-CHF', 'CAD-JPY',
               'EUR-AUD', 'EUR-CHF', 'EUR-GBP', 'EUR-USD', 'GBP-AUD', 'GBP-CAD',
               'GBP-CHF', 'GBP-JPY', 'GBP-USD', 'USD-CAD', 'USD-JPY']
@@ -41,7 +38,7 @@ dateCatDict = {}
 for c in currencies:
     dataReader = ForexRateNewFormatReader(c, 'saat')
     n = LastValuesDataCreator(LnDiffPreprocessor(dataReader, directionCats=True),
-                                           [(5, 4, 3, 2, 1, 0)], normalize=True)
+                              [(5, 4, 3, 2, 1, 0)], normalize=True)
     dateCatDict = merge_with(dateCatDict, n.getCatWithDatesDict())
 
 
@@ -57,50 +54,9 @@ def createWithLetterCategory(row):
     return result
 for v in dateCatDict.values():
     if len(v) == len(currencies):
-       resultList.append(createWithLetterCategory(v))
+        resultList.append(createWithLetterCategory(v))
 
 balanser = SimpleCatsBalanser()
 resultList = balanser.getBalansed(resultList)
 resultList.insert(0, currencies)
 writeData(resultList, outPath + '/input.csv', delimiter=',')
-
-# inputMatrix = []
-# length = min([len(element) for element in inputList])
-# for i in range(0, length):
-#     row = []
-#     for currencyValues in inputList:
-#         row.append(currencyValues[i][0])
-#     inputMatrix.append(row)
-
-
-
-
-# writeData(inputMatrix, outPath + '/input.csv', delimiter=',')
-
-
-
-# n = CatsBalanser(LastValuesDataCreator(LnDiffPreprocessor('EUR-CHF', 'saat', directionCats=True),
-#                                            [(5, 4, 3, 2, 1, 0)], normalize=True))
-# writeData(n.getCat(), outPath + '/output.csv', delimiter=',')
-
-    # writeData(n.getCat(), outPath + '/data-' + c + '.csv', delimiter=',')
-
-
-    # writeData(n.getCat(), outPath + '/cat.csv')
-
-    #
-    # inputs = n.getInputs()
-    # for i in range(0, len(inputs)):
-    #     writeData(inputs[i], outPath + '/input' + str(i + 1) + '.csv')
-    # writeData(n.getData(), outPath + '/data.csv')
-    # writeData(n.getDataWithDates(), outPath + '/all-data.csv')
-
-
-    #writeData(n.getDataWithLetterCategories(), '/home/dragan/Desktop/data-nominal-cats.csv')
-
-    #a = SimplePreprocessor(f, directionCats=True)
-    #b = Normalizer(SimplePreprocessor(f, directionCats=True))
-    #
-    #plt.plot(a.getData()[:10])
-    #plt.plot(b.getData()[:10])
-    #plt.show()
